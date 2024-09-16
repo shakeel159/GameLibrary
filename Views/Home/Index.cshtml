@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginatedGamesViewModel
+
+<div class="text-center">
+    <div class="HeaderText">
+        <h1 class="display-4">Library of Games</h1>
+        <p>Search and Learn about your favourite game titles</p>
+    </div>
+</div>
+
+<div class="FilterBanner">
+    <div class="dropdown">
+        <button class="btn_Filter" onclick="toggleDropdown('categoriesDropdown')">Categories</button>
+        <div id="categoriesDropdown" class="dropdown-content">
+            <a href="/Home/Index?category=Action">Action</a>
+            <a href="/Home/Index?category=RPG">RPG</a>
+            <a href="/Home/Index?category=Adventure">Adventure</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn_Filter" onclick="toggleDropdown('yearDropdown')">Year</button>
+        <div id="yearDropdown" class="dropdown-content">
+            <a href="/Home/Index?year=2022">2022</a>
+            <a href="/Home/Index?year=2021">2021</a>
+            <a href="/Home/Index?year=2020">2020</a>
+        </div>
+    </div>
+    <button class="btn_Filter" onclick="ClearFilters()">Clear Filter</button>
+    <button class="btn_Filter" onclick="YourList()">Your List</button>
+    <div class="search-container">
+        <form action="/Home/Index" method="GET">
+            <input type="text" id="searchInput" placeholder="Search for games..." name="search">
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="FilterSearch"> All Games </div>
+<div class="Card-container">
+    @foreach (var Card in Model.Cards)
+    {
+        <div class="Card">
+            <img class="CardImg" src="@Card.ImageUrl" alt="Box Image" />
+            <p class="CardText">@Card.Text</p>
+        </div>
+    }
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @if (Model.PreviousPageGroup > 0)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@Model.PreviousPageGroup&pageSize=@Model.PageSize">« Previous 10</a>
+            </li>
+        }
+
+        @for (var i = Model.StartPage; i <= Model.EndPage; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link" href="?page=@i&pageSize=@Model.PageSize">@i</a>
+            </li>
+        }
+
+        @if (Model.NextPageGroup > 0)
+        {
+            <li class="page-item">
+                <a class="page-link" href="?page=@Model.NextPageGroup&pageSize=@Model.PageSize">Next 10 »</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        if (searchInput) {
+            searchInput.addEventListener("input", function () {
+                const searchTerm = this.value;
+
+                // Call the server to get filtered games based on the search term
+                fetch(`/Home/SearchGames?search=${searchTerm}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateGameList(data); // Function to update the list of games
+                    })
+                    .catch(error => console.error('Error fetching games:', error));
+            });
+        }
+    });
+
+    function updateGameList(games) {
+        const gameContainer = document.querySelector(".Card-container");
+        gameContainer.innerHTML = ""; // Clear existing games
+
+        games.forEach(game => {
+            const gameCard = `
+                    <div class="Card">
+                        <img class="CardImg" src="${game.imageUrl}" alt="Box Image" />
+                        <p class="CardText">${game.name}</p>
+                    </div>
+                `;
+            gameContainer.innerHTML += gameCard;
+        });
+    }
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.btn_Filter')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+<script src="~/js/site.js"></script>

@@ -1,0 +1,183 @@
+html {
+  font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 5vh;
+}
+.FilterBanner {
+    border: 0.2vw solid grey;
+    display: flex;
+    justify-content: space-between; /* Space between the buttons and search bar */
+    align-items: center; /* Align items vertically centered */
+    padding: 10px; /* Add some padding if needed */
+}
+.btn_Filter {
+    width: 150px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    padding: 10px; /* Adjust padding as needed */
+    margin: 5px; /* Adjust margin as needed */
+    font-size: 16px; /* Ensure font size is consistent */
+    text-align: center; /* Center text horizontally */
+    line-height: 20px; /* Center text vertically */
+    background-color: #f0f0f0; /* Button background color */
+    border: 1px solid #ccc; /* Button border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor pointer on hover */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    gap: 10%;
+}
+.btn_Filter:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+}
+.navbar .navbar-brand {
+    color: gold;
+}
+.search-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    right: 0; /* Align to the right edge of the parent container */
+    transform: translateX(-5%); /* Adjust vertical alignment */
+}
+.FilterSearch {
+    display: flex;
+    align-items: center;
+    margin: 4vh 2vw 1vh 2vw; /* Set individual margins for top, right, bottom, and left */
+    height: 5vh;
+    font-family: 'Arial', sans-serif; /* Set the font family */
+    font-size: 30px; /* Set the font size */
+    color: black; /* Set the text color */
+    font-weight: bold; /* Set the font weight */
+    text-align: center; /* Align text to the center */
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.btn_Filter {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_Filter:hover {
+    background-color: #3e8e41;
+}
+
+/* Show the dropdown when .show class is added */
+.show {
+    display: block;
+}
+.container-fluid {
+    background-color: #333; /* Dark background */
+    padding: 2vh;
+}
+.Card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0%;
+}
+.Card {
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    width: 15vw; /* Width relative to viewport width */
+    height: 20vh; /* Height relative to viewport height */
+    border: 0.2vw solid grey; /* Border size relative to viewport width */
+    background-color: lightblue; /* Background color of the box */
+    margin: 2vh; /* Margin relative to viewport height */
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2); /* Shadow effect responsive */
+    text-align: center; /* Center align text */
+    overflow: hidden; /* Hide overflowing content */
+}
+.CardImg {
+    width: 100%; /* Make image take the full width of the card */
+    height: 70%; /* Adjust height as needed */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+}
+.CardText {
+    width: 100%; /* Make text area take full width */
+    height: 30%; /* Adjust height as needed */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    padding: 0.5rem; /* Add padding if needed */
+    box-sizing: border-box; /* Ensure padding is included in height */
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    display: block;
+    padding: 8px 16px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+    .page-link:hover {
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+    }
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
