@@ -3,6 +3,7 @@
 }
 @model PaginatedGamesViewModel
 
+
 <div class="text-center">
     <div class="HeaderText">
         <h1 class="display-4">Library of Games</h1>
@@ -11,28 +12,34 @@
 </div>
 
 <div class="FilterBanner">
+    <!-- Categories Dropdown -->
     <div class="dropdown">
         <button class="btn_Filter" onclick="toggleDropdown('categoriesDropdown')">Categories</button>
         <div id="categoriesDropdown" class="dropdown-content">
-            <a href="/Home/Index?category=Action">Action</a>
-            <a href="/Home/Index?category=RPG">RPG</a>
-            <a href="/Home/Index?category=Adventure">Adventure</a>
+            @foreach (var category in Model.Categories)
+            {
+                <a href="@Url.Action("Index", new { category = category.Name, year = Model.SelectedYear, search = Model.SelectedSearch, page = 1, pageSize = Model.PageSize })">@category.Name</a>
+            }
         </div>
     </div>
+    <!-- Year Dropdown -->
     <div class="dropdown">
         <button class="btn_Filter" onclick="toggleDropdown('yearDropdown')">Year</button>
         <div id="yearDropdown" class="dropdown-content">
-            <a href="/Home/Index?year=2022">2022</a>
-            <a href="/Home/Index?year=2021">2021</a>
-            <a href="/Home/Index?year=2020">2020</a>
+            @foreach (var year in Model.Years)
+            {
+                <a href="@Url.Action("Index", new { year = year, category = Model.SelectedCategory, search = Model.SelectedSearch, page = 1, pageSize = Model.PageSize })"
+                   class="dropdown-item @(year.ToString() == Model.SelectedYear ? "selected" : "")">
+                    @year
+                </a>
+            }
         </div>
     </div>
     <button class="btn_Filter" onclick="ClearFilters()">Clear Filter</button>
     <button class="btn_Filter" onclick="YourList()">Your List</button>
     <div class="search-container">
         <form action="/Home/Index" method="GET">
-            <input type="text" id="searchInput" placeholder="Search for games..." name="search">
-
+            <input type="text" id="searchInput" placeholder="Search for games..." name="search" value="@Model.SelectedSearch">
             <button type="submit">Search</button>
         </form>
     </div>
@@ -54,27 +61,66 @@
         @if (Model.PreviousPageGroup > 0)
         {
             <li class="page-item">
-                <a class="page-link" href="?page=@Model.PreviousPageGroup&pageSize=@Model.PageSize">« Previous 10</a>
+                <a class="page-link" href="@Url.Action("Index", new { category = Model.SelectedCategory, year = Model.SelectedYear, search = Model.SelectedSearch, page = Model.PreviousPageGroup, pageSize = Model.PageSize })">« Previous 10</a>
             </li>
         }
 
         @for (var i = Model.StartPage; i <= Model.EndPage; i++)
         {
             <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
-                <a class="page-link" href="?page=@i&pageSize=@Model.PageSize">@i</a>
+                <a class="page-link" href="@Url.Action("Index", new { category = Model.SelectedCategory, year = Model.SelectedYear, search = Model.SelectedSearch, page = i, pageSize = Model.PageSize })">
+                    @i
+                </a>
             </li>
         }
 
         @if (Model.NextPageGroup > 0)
         {
             <li class="page-item">
-                <a class="page-link" href="?page=@Model.NextPageGroup&pageSize=@Model.PageSize">Next 10 »</a>
+                <a class="page-link" href="@Url.Action("Index", new { category = Model.SelectedCategory, year = Model.SelectedYear, search = Model.SelectedSearch, page = Model.NextPageGroup, pageSize = Model.PageSize })">Next 10 »</a>
             </li>
         }
     </ul>
 </nav>
 
+
 <script>
+
+    // function toggleDropdown(id) {
+    //     const dropdown = document.getElementById(id);
+    //     if (dropdown.style.display === "block") {
+    //         dropdown.style.display = "none";
+    //     } else {
+    //         dropdown.style.display = "block";
+    //     }
+    // }
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.btn_Filter')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none";
+                }
+            }
+        }
+    }
+
+    function ClearFilters() {
+        window.location.href = '@Url.Action("Index", new { category = (string)null, year = (string)null, search = (string)null, page = 1, pageSize = Model.PageSize })';
+    }
+
+    function YourList() {
+        window.location.href = '/YourList';
+    }
+
+
     document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.getElementById("searchInput");
         if (searchInput) {
@@ -98,34 +144,13 @@
 
         games.forEach(game => {
             const gameCard = `
-                    <div class="Card">
-                        <img class="CardImg" src="${game.imageUrl}" alt="Box Image" />
-                        <p class="CardText">${game.name}</p>
-                    </div>
-                `;
+                        <div class="Card">
+                            <img class="CardImg" src="${game.imageUrl}" alt="Box Image" />
+                            <p class="CardText">${game.name}</p>
+                        </div>
+                    `;
             gameContainer.innerHTML += gameCard;
         });
-    }
-    function toggleDropdown(id) {
-        const dropdown = document.getElementById(id);
-        if (dropdown.style.display === "block") {
-            dropdown.style.display = "none";
-        } else {
-            dropdown.style.display = "block";
-        }
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.btn_Filter')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.style.display === "block") {
-                    openDropdown.style.display = "none";
-                }
-            }
-        }
     }
 </script>
 

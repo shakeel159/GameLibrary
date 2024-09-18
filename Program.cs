@@ -1,8 +1,10 @@
-using GameLibrary.Configurations;
+﻿using GameLibrary.Configurations;
 using GameLibrary.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using GameLibrary.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 // Load configuration for AppSettings

@@ -16,11 +16,13 @@
 
         //  list of GenreModel objects
         public List<GenreModel> Genres { get; set; }
+        public int Year { get; set; }
     }
 
     public class GenreModel
     {
         public int Id { get; set; }
         public string Name { get; set; } // Genre name
+        public int Years { get; set; }
     }
 }

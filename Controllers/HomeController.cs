@@ -26,39 +26,46 @@ namespace GameLibrary.Controllers
         {
             
             var cards = new List<CardModel>();
+            var categories = new List<GenreModel>(); // List to store categories
+            var availableYears = new List<int>();
             int totalGames = 0;  // To store the total number of games
             int totalPages = 0;  // To store the total number of pages
 
             try
             {
 
+                // Convert year to date range
+                string startDate = null;
+                string endDate = null;
+
+                // Fetch available years from the API
+                availableYears = await _apiService.GetYearsAsync("2000-01-01", DateTime.Now.ToString("yyyy-MM-dd")); // Example range
+                categories = await _apiService.GetCategoriesAsync();
                 // Fetch games from the API 
-                var apiResponse = await _apiService.GetGamesAsync(search, page, pageSize);
+                var apiResponse = await _apiService.GetGamesAsync(search, startDate, endDate, page, pageSize);
                 var responseJson = JObject.Parse(apiResponse);
                 var games = responseJson["results"].ToObject<List<GameModel>>();
-
-                //// Fetch total count of games from API response, if available
-                totalGames = JObject.Parse(apiResponse)["count"].ToObject<int>();
-                totalPages = (int)Math.Ceiling((double)totalGames / pageSize);
-
+                //categories = categoriesResponse;
+                if (!string.IsNullOrEmpty(year))
+                {
+                    startDate = $"{year}-01-01";
+                    endDate = $"{year}-12-31";
+                }
                 // Filter games by category if the category is provided
                 if (!string.IsNullOrEmpty(category))
                 {
+                    //// Fetch categories from the API
+                    var categoriesResponse = await _apiService.GetCategoriesAsync();
                     games = games.Where(g => g.Genres.Any(genre => genre.Name.Equals(category, StringComparison.OrdinalIgnoreCase))).ToList();
-                }
-                // Filter games by year if the year is provided
-                if (!string.IsNullOrEmpty(year))
-                {
-                    // Implement year filtering logic if needed
                 }
                 // Filter games by search query if the search term is provided
                 if (!string.IsNullOrEmpty(search))
                 {
                     games = games.Where(g => g.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
                 }
-                // Limit the number of games to 10
-                //games = games.Take(pageSize).ToList(); // Take only the first 10 games
-
+                //// Fetch total count of games from API response, if available
+                totalGames = JObject.Parse(apiResponse)["count"].ToObject<int>();
+                totalPages = (int)Math.Ceiling((double)totalGames / pageSize);
                 // Prepare the card data for the current page
                 // For each game in the filtered subset, fetch its screenshots and prepare the card data
                 foreach (var game in games)
@@ -68,6 +75,7 @@ namespace GameLibrary.Controllers
                     var imageUrl = screenshots.FirstOrDefault() ?? "/images/default.jpg"; // Use the first screenshot or a default image
                     cards.Add(new CardModel
                     {
+                        Id = game.Id,
                         Text = game.Name, // Use the game name or any other property
                         ImageUrl = imageUrl
                     });
@@ -77,6 +85,7 @@ namespace GameLibrary.Controllers
             {
                 _logger.LogError(ex, "An error occurred while fetching games.");
                 // Handle the error (e.g., show an error message to the user)
+                 return View("Error");
             }
 
             // Calculate pagination
@@ -93,6 +102,8 @@ namespace GameLibrary.Controllers
             var viewModel = new PaginatedGamesViewModel
             {
                 Cards = cards,
+                Categories = categories, // Pass categories to the view
+                Years = availableYears, // Pass available years to the view
                 CurrentPage = page,
                 PageSize = pageSize,
                 TotalPages = totalPages,
@@ -100,7 +111,10 @@ namespace GameLibrary.Controllers
                 StartPage = startPage,
                 EndPage = endPage,
                 PreviousPageGroup = previousPageGroup,
-                NextPageGroup = nextPageGroup
+                NextPageGroup = nextPageGroup,
+                SelectedCategory = category,
+                SelectedYear = year,
+                SelectedSearch = search
             };
             //return View(cards);
             return View(viewModel);

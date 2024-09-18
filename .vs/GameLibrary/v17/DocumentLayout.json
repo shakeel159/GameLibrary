@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\models\\paginatedgamesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:models\\paginatedgamesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\models\\paginatedgamesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:models\\paginatedgamesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|e:\\webdevprojects\\gamelibraryfolder\\gamelibrary\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEE9941D-3E41-45D0-9251-51E0AB5C6774}|GameLibrary.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,20 +34,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAHYAAAAAAAAAAADwv5QAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-09T23:39:21.78Z",
-              "IsPinned": true,
+              "DocumentIndex": 1,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "Services\\ApiService.cs",
+              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Services\\ApiService.cs",
+              "RelativeToolTip": "Services\\ApiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T22:54:13.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CardModel.cs",
+              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Models\\CardModel.cs",
+              "RelativeDocumentMoniker": "Models\\CardModel.cs",
+              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Models\\CardModel.cs",
+              "RelativeToolTip": "Models\\CardModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T22:32:04.358Z",
               "EditorCaption": ""
             },
             {
@@ -62,72 +70,46 @@
               "RelativeDocumentMoniker": "Models\\PaginatedGamesViewModel.cs",
               "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Models\\PaginatedGamesViewModel.cs",
               "RelativeToolTip": "Models\\PaginatedGamesViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T17:58:35.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CardModel.cs",
-              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Models\\CardModel.cs",
-              "RelativeDocumentMoniker": "Models\\CardModel.cs",
-              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Models\\CardModel.cs",
-              "RelativeToolTip": "Models\\CardModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T23:53:18.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "Services\\ApiService.cs",
-              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Services\\ApiService.cs",
-              "RelativeToolTip": "Services\\ApiService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T22:54:13.056Z",
+              "WhenOpened": "2024-09-17T22:39:26.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-09T23:39:21.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAmwGcAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T00:26:25.904Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-09T23:49:41.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "E:\\WebDevProjects\\GameLibraryFolder\\GameLibrary\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEoAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAmwFoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-09T23:25:55.043Z",
               "EditorCaption": ""
